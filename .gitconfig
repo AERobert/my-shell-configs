@@ -1,0 +1,17 @@
+[user]
+	name = AERobert\n
+	email = egglestonarobert@gmail.com
+[init]
+	defaultBranch = main
+[alias]
+	what-branch = branch --show-current
+	wb = what-branch
+	gset = config --global
+	cmm = commit -m
+	ac = "!f() { git add \"$1\" && git commit -m \"$2\"; }; f"
+	co = checkout
+	oopse = reset --hard HEAD
+	pom = "!sh -c 'remote_branch=$(git ls-remote --heads origin | grep refs/heads/main); if [ -n \"$remote_branch\" ]; then git push origin HEAD:main; else git push origin HEAD:master; fi' -"
+	coarb = "!f() { git branch -r | rev | cut -d "/" -f 1 | rev | xargs -I {} git checkout {}; }; f"
+
+	rao = !sh -c \"git remote add origin \\$1\" -
